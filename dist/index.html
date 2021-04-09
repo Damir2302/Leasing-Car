@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is Leaseng Car Website!">
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <title>Leasing Car</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <div class="navbar">
+          <div class="container">
+            <div class="navbar__wrap">
+              <div class="navbar__left">
+                <div class="navbar__logo logo">
+                  <picture>
+                    <source media="(max-width: 560px)" srcset="assets/img/logo-mobile.svg" type="image/svg+xml"><img src="assets/img/logo.svg" alt="logo" title="logo">
+                  </picture>
+                </div><span class="logo__slogan">  лизинговая компания</span>
+              </div>
+              <div class="navbar__right">
+                <ul class="navbar__menu">
+                  <li class="navbar__menu-item"><a class="navbar__menu-link" href="#">Лизинг</a>
+                    <ul class="navbar__dropdown">
+                      <li><a class="navbar__dropdown-link" href="#">Для личного пользования</a></li>
+                      <li><a class="navbar__dropdown-link" href="#">Для юридических лиц</a></li>
+                      <li><a class="navbar__dropdown-link" href="#">Калькулятор</a></li>
+                    </ul>
+                  </li>
+                  <li class="navbar__menu-item"><a class="navbar__menu-link" href="#">Каталог</a></li>
+                  <li class="navbar__menu-item"><a class="navbar__menu-link" href="#">О нас</a></li>
+                </ul>
+                <button class="navbar__btn form-btn">Оставить заявку</button>
+                <div class="menu-wrap">
+                  <input id="menu" type="checkbox" name="menu"><span></span>
+                  <div class="aside" id="aside">
+                    <ul class="aside-menu">
+                      <li><a class="aside-menu__link" href="#">Лизинг</a>
+                        <ul class="aside__dropdown">
+                          <li><a class="aside__dropdown-link" href="#">Для личного пользования</a></li>
+                          <li><a class="aside__dropdown-link" href="#">Для юридических лиц</a></li>
+                          <li><a class="aside__dropdown-link" href="#">Калькулятор</a></li>
+                        </ul>
+                      </li>
+                      <li><a class="aside-menu__link" href="#">Каталог</a></li>
+                      <li><a class="aside-menu__link" href="#">О нас</a></li>
+                    </ul>
+                    <button class="aside-menu__btn form-btn"> Оставить заявку</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slide__wrapper">
+          <div class="container">
+            <div class="slide__container">
+              <div class="slide__box">
+                <div class="slide__item">
+                  <div class="slide__description">
+                    <h1 class="slide__title">Авто в лизинг для физических лиц</h1>
+                    <p class="slide__text">Получите машину за 5 дней</p>
+                    <button class="slide__btn form-btn">Оставить заявку</button>
+                  </div>
+                </div>
+              </div>
+              <div class="slide__nav"><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span></div>
+              <div id="btn-prev"></div>
+              <div id="btn-next"></div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <section class="calc">
+        <div class="container">
+          <h2 class="calc__title">Рассчитайте стоимость автомобиля в лизинг</h2>
+          <form class="calc-form">
+            <div class="calc__block"><span class="block__label">  Стоимость автомобиля</span>
+              <input class="calc__input" id="cost" type="text" name="cost" maxlength="7" value="2500000">
+              <label for="cost">₽</label>
+              <input id="costRange" type="range" name="cost" min="1000000" max="6000000" step="1000" value="2500000">
+            </div>
+            <div class="calc__block"><span class="block__label">   Первоначальный взнос</span>
+              <input class="calc__input" id="deposit" type="text" name="deposit" maxlength="7">
+              <label for="deposit"></label>
+              <input id="depositRange" type="range" name="deposit" min="10" max="60" step="10" value="20">
+            </div>
+            <div class="calc__block"><span class="block__label">   Срок лизинга</span>
+              <input class="calc__input" id="month" type="text" name="limit" value="20" maxlength="2">
+              <label for="month">мес.</label>
+              <input id="monthRange" type="range" name="limit" min="1" max="60" value="60">
+            </div>
+          </form>
+          <div class="result">
+            <div class="result__block"><span class="block__label"> Сумма договора лизинга</span>
+              <p class="result__value" id="sumPay"></p>
+            </div>
+            <div class="result__block"><span class="block__label"> Ежемесячный платеж от</span>
+              <p class="result__value" id="monthPay"> </p>
+            </div>
+            <button class="result__btn form-btn">   Оставить заявку</button>
+          </div>
+        </div>
+      </section>
+      <div class="popup" id="popup">
+        <div class="close-icon" id="close-icon"><img src="assets/img/close.svg" alt="close" title="close"></div>
+        <div class="popup__wrapper">
+          <h2 class="popup__title">Онлайн-заявка</h2>
+          <p class="popup__subtitle">  Заполните форму, и мы вскоре свяжемся с вами, чтобы ответить на все вопросы</p>
+          <form class="popup__form" id="form">
+            <div class="form-wrap">
+              <div class="popup__form-block">
+                <input class="popup__input phone-input" type="tel" name="phone" required>
+                <label for="phone"> Телефон</label>
+              </div>
+              <div class="popup__form-block">
+                <input class="popup__input name-input" type="text" name="name" required>
+                <label for="name">Имя</label>
+              </div>
+            </div>
+            <div class="button-field">
+              <p class="notice-text">  Нажимая на кнопку «Оставить заявку»,  я даю согласие <span>на обработку персональных данных</span></p>
+              <button class="popup-form__btn" type="submit" form="form" disabled>
+                <span class="btn__txt">Оставить заявку</span><svg class="btn__circle" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<circle class="btn__loading" cx="50" cy="50" r="45"/>
+</svg>
+              </button>
+            </div>
+          </form>
+          <div class="social"><a class="social__icon"><img src="assets/img/whatsapp.svg" alt="whatsapp" title="whatsapp"></a><a class="social__icon"><img src="assets/img/telegram.svg" alt="telegram" title="telegram"></a></div>
+        </div>
+      </div>
+    </div>
+    <script src="assets/js/app.js"> </script>
+  </body>
+</html>

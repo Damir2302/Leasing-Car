@@ -1,0 +1,44 @@
+.navbar
+    .container
+        .navbar__wrap
+            .navbar__left
+                .navbar__logo.logo
+                    picture
+                        source(media="(max-width: 560px)", srcset="assets/img/logo-mobile.svg", type="image/svg+xml")
+                        img(src="assets/img/logo.svg", alt="logo", title="logo")
+                span.logo__slogan   лизинговая компания
+            .navbar__right
+                ul.navbar__menu
+                    li.navbar__menu-item
+                        a.navbar__menu-link(href="#") Лизинг
+                        ul.navbar__dropdown
+                            li
+                                a.navbar__dropdown-link(href="#") Для личного пользования
+                            li
+                                a.navbar__dropdown-link(href="#") Для юридических лиц
+                            li
+                                a.navbar__dropdown-link(href="#") Калькулятор
+                    li.navbar__menu-item
+                        a.navbar__menu-link(href="#") Каталог
+                    li.navbar__menu-item
+                        a.navbar__menu-link(href="#") О нас
+                button.navbar__btn.form-btn Оставить заявку
+                .menu-wrap
+                    input(id="menu", type="checkbox", name="menu")
+                    span
+                    .aside#aside
+                        ul.aside-menu
+                            li
+                                a.aside-menu__link(href="#") Лизинг
+                                ul.aside__dropdown
+                                    li
+                                        a.aside__dropdown-link(href="#") Для личного пользования
+                                    li
+                                        a.aside__dropdown-link(href="#") Для юридических лиц
+                                    li
+                                        a.aside__dropdown-link(href="#") Калькулятор
+                            li
+                                a.aside-menu__link(href="#") Каталог
+                            li
+                                a.aside-menu__link(href="#") О нас
+                        button.aside-menu__btn.form-btn  Оставить заявку

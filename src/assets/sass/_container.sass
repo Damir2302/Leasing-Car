@@ -1,0 +1,27 @@
+*,
+*::before,
+*::after
+    box-sizing: border-box
+
+.page
+    padding: 0 48px 140px
+    overflow: hidden
+    height: 100%
+    width: 100%
+
+.container
+    width: 100%
+    max-width: 1344px
+    margin: 0 auto
+
+@media (max-width: 1024px)
+    .page
+        padding: 24px 36px 140px
+    .container
+        max-width: 928px
+
+@media (max-width: 767px)
+    .page
+        padding: 16px 20px 140px
+    .container
+        max-width: 696px

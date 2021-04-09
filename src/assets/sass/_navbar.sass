@@ -1,0 +1,230 @@
+.logo
+    width: 199px
+    height: 34px
+    &__slogan
+        display: flex
+        align-items: center
+        font-size: 1.6em
+        line-height: 1.5
+        color: rgba(17, 17, 17, 0.5)
+        &::before
+            content: ''
+            display: inline-block
+            margin: auto 17.5px
+            background-color: #C4C4C4
+            width: 1px
+            height: 30px
+
+.navbar
+    background: #ffffff
+    display: flex
+    align-items: center
+    padding: 0 48px
+    position: fixed
+    left: 0
+    top: 0
+    width: 100%
+    height: 90px
+    z-index: 9
+    &__wrap
+        display: flex
+        justify-content: space-between
+        align-items: center
+    &__left
+        display: flex
+        align-items: center
+    &__right
+        display: flex
+    &__menu
+        display: flex
+        align-items: center
+        &-item
+            padding: 10px 16px
+        &-link
+            font-size: 1.6em
+            font-weight: 700
+            line-height: 1.5
+            color: $gray
+            &:hover
+                color: $orange
+        & li
+            &:first-child
+                &:hover > .navbar__dropdown
+                    display: block
+    &__dropdown
+        display: none 
+        width: 243px
+        height: 135px
+        background-color: #ffffff
+        margin: 8px -16px 0
+        padding: 16px
+        position: absolute
+        border: 1px solid #F3F3F4
+        box-shadow: 0px 4px 4px rgba(51, 51, 51, 0.04), 0px 14px 24px rgba(51, 51, 51, 0.12)
+        border-radius: 15px
+        & li
+            margin-bottom: 16px
+        &-link
+            font-size: 1.6em
+            line-height: 1.5
+            color: #111111
+            &:hover
+                color: $orange
+    &__btn
+        margin-left: 24px
+        font-family: 'Gilroy', 'sans-serif'
+        font-size: 1.6em
+        font-weight: 700
+        color: $orange
+        border: 1px solid $orange
+        transition: all .5s
+        &:hover
+            background-color: $orange
+            color: #ffffff
+        &:active
+            background-color: #FFA83D
+
+.menu-wrap
+    display: none
+    position: relative
+    & span
+        display: block
+        position: relative
+        background-color: #000000
+        top: 0px
+        width: 21px
+        height: 3px
+        border-radius: 25px
+        transition: all .5s
+        z-index: 4
+        &::before
+            content: ''
+            display: block
+            position: absolute
+            background-color: #000000
+            top: -8px
+            width: 21px
+            height: 3px
+            border-radius: 25px
+        &::after
+            content: ''
+            display: block
+            position: absolute
+            top: 8px
+            background-color: #000000
+            width: 16px
+            height: 3px
+            border-radius: 25px
+
+input[type="checkbox"]
+    position: absolute
+    margin: 0
+    top: -11px
+    left: 0
+    width: 21px
+    height: 25px
+    opacity: 0
+    cursor: pointer
+    z-index: 5
+    &:checked ~ .aside
+        right: 0
+    &:checked ~ span
+        transform: rotate(45deg)
+        z-index: 4
+        &::before
+            transform: rotate(90deg)
+            top: 0px
+        &::after
+            width: 0
+
+.aside
+    display: flex
+    background: #ffffff
+    flex-direction: column
+    justify-content: space-between
+    background-color: #ffffff
+    padding: 44px 36px 44px 44px
+    position: fixed
+    top: 0
+    right: -100vw
+    width: 329px
+    height: 100%
+    border-radius: 32px 0px 0px 0px
+    transition: right .5s
+    z-index: 3
+    &-menu
+        margin-top: 20px
+        & li
+            margin-top: 32px
+        & > li:first-child
+            margin-top: 0
+        &__btn
+            position: relative
+            background-color: $orange
+            bottom: 0
+            font-size: 1.6em
+            color: #fff
+            border: none
+        &__link
+            display: block
+            font-size: 2.4em
+            font-weight: 700
+            line-height: 1
+            color: $gray
+            transition: color .2s
+            &:hover
+                color: $orange
+    &__dropdown
+        height: 0
+        overflow: hidden
+        margin: 0 10px
+        &-link
+            display: block
+            font-size: 1.6em
+            font-weight: 700
+            line-height: 1
+            color: #575757
+            transition: color .2s
+
+@media (max-width: 1024px)
+    .navbar
+        padding: 0 36px
+    .logo
+        width: 166px
+        height: 28px
+
+@media (max-width: 960px)
+    .navbar
+        &__menu
+            display: none
+        &__btn
+            display: none
+    .menu-wrap
+        display: block
+@media (max-width: 767px)
+    .navbar
+            padding: 0 20px
+
+@media (max-width: 560px)
+    .navbar
+        background: #000000
+    .logo
+        &__slogan
+            display: none
+    .aside
+        padding: 24px 30px 24px 24px
+        width: 260px
+    .menu-wrap
+        & span
+            background-color: #ffffff
+            &::before
+                background-color: #ffffff
+            &::after
+                background-color: #ffffff
+    input[type="checkbox"]
+        &:checked ~ span
+            background-color: #111111
+            &::before
+                background-color: #111111
+            &::after
+                background-color: #111111

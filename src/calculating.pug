@@ -1,0 +1,58 @@
+section.calc
+    .container
+        h2.calc__title Рассчитайте стоимость автомобиля в лизинг
+        form.calc-form
+            .calc__block
+                span.block__label   Стоимость автомобиля
+                input(id="cost", 
+                    class="calc__input", 
+                    type="text", 
+                    name="cost",
+                    maxlength="7",
+                    value="2500000")
+                label(for="cost") ₽
+                input(id="costRange", 
+                    type="range", 
+                    name="cost",
+                    min="1000000",
+                    max="6000000",
+                    step="1000",
+                    value="2500000")
+            .calc__block
+                span.block__label    Первоначальный взнос
+                input(id="deposit", 
+                    class="calc__input", 
+                    type="text", 
+                    name="deposit" 
+                    maxlength="7",)
+                label(for="deposit")
+                input(id="depositRange", 
+                    type="range", 
+                    name="deposit",
+                    min="10",
+                    max="60",
+                    step="10",
+                    value="20")
+            .calc__block
+                span.block__label    Срок лизинга
+                input(id="month", 
+                    class="calc__input", 
+                    type="text", 
+                    name="limit",
+                    value="20"
+                    maxlength="2")
+                label(for="month") мес.
+                input(id="monthRange", 
+                    type="range", 
+                    name="limit", 
+                    min="1"
+                    max="60"
+                    value="60")
+        .result
+            .result__block
+                span.block__label  Сумма договора лизинга
+                p.result__value#sumPay
+            .result__block
+                span.block__label  Ежемесячный платеж от
+                p.result__value#monthPay 
+            button.result__btn.form-btn    Оставить заявку

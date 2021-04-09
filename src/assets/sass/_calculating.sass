@@ -1,0 +1,161 @@
+.calc
+    margin-top: 100px
+    &__title
+        margin-bottom: 32px
+        width: 100%
+        max-width: 753px
+        font-family: 'Nekst-Black'
+        font-size: 5.4em
+        line-height: 0.9
+    &-form
+        display: flex
+        justify-content: space-between
+    &__block
+        position: relative
+        width: 100%
+        max-width: 427px
+        margin: 0 16px
+        &:first-child
+            margin-left: 0
+        &:last-child
+            margin-right: 0
+        & label
+            position: absolute
+            bottom: 16px
+            right: 24px
+            font-family: 'Nekst-Black'
+            font-size: 3em
+            line-height: 1.2
+            color: $gray
+    &__input
+        padding: 0.53em 0.8em
+        font-family: 'Nekst-Black'
+        font-weight: 900
+        margin-top: 24px
+        padding-right: 75px
+        max-width: 427px
+        width: 100%
+        font-size: 3em
+        line-height: 1.2
+        border: 2px solid #F3F3F4
+        &:focus
+            background: #ffffff
+
+input[type=range]
+    padding: 0 24px
+    position: absolute
+    left: 0
+    bottom: 0
+    max-width: 427px
+    width: 100%
+
+.result
+    display: flex
+    justify-content: space-between
+    margin-top: 60px
+    &__block
+        margin: 0 16px
+        width: 100%
+        max-width: 427px
+        &:first-child
+            margin-left: 0
+        &:last-child
+            margin-right: 0
+        & span
+            display: inline-block
+            margin-bottom: 8px
+    &__value
+        font-family: 'Nekst-Black'
+        font-size: 5.4em
+        font-weight: 900
+        line-height: 0.9
+        color: #575757
+    &__btn
+        background-color: $orange
+        padding: 0.46em 3em 0.6em
+        width: 100%
+        max-width: 427px
+        font-family: 'Gilroy'
+        font-size: 3em
+        line-height: 1.2
+        color: #ffffff
+        border: none
+
+@media (max-width: 1160px)
+    .calc
+        margin-top: 80px
+        &__title
+            margin-bottom: 20px
+        &-form
+            flex-direction: column
+        &__block
+            margin: 0
+            max-width: 100%
+        &__input
+            margin: 0
+            max-width: 100%
+            
+    input[type=range]
+        max-width: 100%
+    
+    .result
+        margin-top: 20px
+        flex-wrap: wrap
+        &__block
+            max-width: 50%
+            &:first-child
+                max-width: 40%
+        &__btn
+            margin-top: 44px
+            padding: 0.46em 1.73em 0.6em
+            max-width: 345px
+        &__value
+            color: #333333
+
+@media (max-width: 960px)
+    .result
+        &__block
+            max-width: 45%
+            &:first-child
+                max-width: 45%
+
+
+@media (max-width: 767px)
+    .result
+        &__block
+            margin: 0
+            &:first-child
+                max-width: 55%
+
+@media (max-width: 560px)
+    .calc
+        &__block
+            & label
+                font-size: 2.2e
+            & span
+                margin-bottom: 8px
+        &__title
+            font-size: 3.4em
+        &__input
+            font-size: 2.2em
+            line-height: 0.9
+            color:#333E48
+    .result
+        & span.block__label
+            margin: 5px 0 0
+        &__block
+            margin: 0
+            max-width: 100%
+            &:first-child
+                margin-bottom: 24px
+                max-width: 100%
+            & span
+                margin-bottom: 2px
+        &__value
+            font-size: 2.2em
+            line-height: 0.9
+        &__btn
+            margin-top: 32px
+            padding: 0.8em 2.34em 0.9em
+            font-size: 2.2em
+            line-height: 0.9
