@@ -1,19 +1,20 @@
-export const runSlide = () => {
-    
-const slides = document.querySelectorAll('.slide');
+const slides = document.querySelectorAll('.slide__box');
 const btnPrev = document.getElementById('btn-prev');
 const btnNext = document.getElementById('btn-next');
 const dots = document.querySelectorAll('.dot');
+const progressBar = document.getElementById('progress-bar');
 
 let index = 0;
-
-
 
 const activeSlide = (n) => {
 	for (slide of slides) {
 		slide.classList.remove('active');
 	}
 	slides[n].classList.add('active');
+	clearInterval(runSlider);
+	progressBar.classList.remove('progress-bar');
+	setTimeout(resetAnimation, 1)
+	runSlider = setInterval(nextSLide, 10000);
 }
 
 const activeDot = (n) => {
@@ -21,6 +22,10 @@ const activeDot = (n) => {
 		dot.classList.remove('active');
 	}
 	dots[n].classList.add('active');
+	clearInterval(runSlider);
+	progressBar.classList.remove('progress-bar');
+	setTimeout(resetAnimation, 1)
+	runSlider = setInterval(nextSLide, 10000);
 }
 
 const active = (i) => {
@@ -59,4 +64,7 @@ dots.forEach((dot, ind) => {
 btnNext.addEventListener('click', nextSLide);
 btnPrev.addEventListener('click', prevSlide);
 
+let runSlider = setInterval(nextSLide, 10000);
+const resetAnimation = () => {
+	progressBar.classList.add('progress-bar');
 }

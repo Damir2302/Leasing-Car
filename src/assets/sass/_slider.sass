@@ -5,12 +5,25 @@
         flex-direction: column
         justify-content: space-between
     &__box
+        display: none
         background: #000000 url('../img/slide-1.jpg') no-repeat right
         width: 100%
         height: 473px
         margin-top: 95px
         border-radius: 32px
         overflow: hidden
+        &:nth-child(2)
+            background: #000000 url('../img/slide-2.jpg') no-repeat right
+        &:nth-child(3)
+            background: #000000 url('../img/slide-3.jpg') no-repeat right
+        &:nth-child(4)
+            background: #000000 url('../img/slide-4.jpg') no-repeat right
+        &:nth-child(5)
+            background: #000000 url('../img/slide-5.jpg') no-repeat right
+        &:nth-child(6)
+            background: #000000 url('../img/slide-6.jpg') no-repeat right
+        &.active
+            display: block
     &__item
         width: 585px
         height: 238px
@@ -38,10 +51,11 @@
         & img
             width: 100%
     &__nav
+        margin: 0 auto
         position: relative
         bottom: 48px
         display: flex
-        margin: 0 auto
+        align-items: center
         & span
             margin: 0 9px
             display: block
@@ -50,8 +64,116 @@
             height: 6px
             border-radius: 50%
             opacity: 0.4
+            cursor: pointer
+            &.active
+                width: 12px
+                height: 12px
+                opacity: 1
 
-#btn-prev, #btn-next
+#btn-prev
     position: absolute
-    right: 0
-    bottom: 0
+    right: 110px
+    bottom: 70px
+    cursor: pointer
+    &:hover > svg
+        background: rgba(255, 255, 255, 0.2)
+    &:active > svg
+        background: rgba(255, 255, 255, 0.3)
+    & img
+        width: 4px
+        height: 8px
+        position: absolute
+        right: 10.5px
+        top: 9px
+        user-select: none
+        transform: rotate(180deg)
+
+#btn-next
+    position: absolute
+    right: 45px
+    bottom: 60px
+    cursor: pointer
+    &:hover > svg
+        background: rgba(255, 255, 255, 0.2)
+    &:active > svg
+        background: rgba(255, 255, 255, 0.3)
+    & img
+        width: 8px
+        height: 16px
+        position: absolute
+        right: 19px
+        top: 16px
+        user-select: none
+
+svg
+    border-radius: 50%
+
+circle 
+  max-width: 100px
+  fill: transparent
+  stroke: #ffffff
+  opacity: 0.4
+  stroke-width: 2px
+  stroke-linecap: round
+  transform-origin: 50% 50%
+  stroke-dasharray: 0
+  stroke-dashoffset: 283
+  &.prevBtn
+    stroke: #fff
+    stroke-dasharray: 283
+    stroke-dashoffset: 283
+  &.progress-bar
+    stroke: #fff
+    stroke-dasharray: 283
+    stroke-dashoffset: 283
+    opacity: 1
+    animation: progress 10s linear infinite
+
+@keyframes progress
+    0%
+        stroke-dashoffset: 283
+        
+    100%
+        stroke-dashoffset: 134
+        
+
+
+@media (max-width: 1280px)
+    .slide
+        &__box
+            &.active
+                background-size: 675px 378px
+                background-position: right 70%
+
+@media (max-width: 960px)
+    .slide
+        &__box
+            &.active
+                background-size: 571px 321px
+
+@media (max-width: 768px)
+    .slide
+        &__box
+            &.active
+                background-position: center -40%
+                background-size: 571px 321px
+        &__description
+            margin-top: 225px
+            margin-left: 40px
+        &__text
+            display: none
+    #btn-prev, #btn-next
+        display: none
+
+@media (max-width: 560px)
+    .slide
+        &__box
+            margin-top: 25px
+            &.active
+                background-position: right -20%
+                background-size: 462px 261px
+        &__title
+            width: 263px
+            font-size: 3.2em
+        &__description
+            margin-left: 20px
