@@ -73,7 +73,7 @@
                   <div class="slide__description">
                     <h1 class="slide__title">Условия лизинга легковых автомобилей</h1>
                     <p class="slide__text">Самые лучшие условия для Вас</p>
-                    <button class="slide__btn">Оставить заявку</button>
+                    <button class="slide__btn form-btn">Оставить заявку</button>
                   </div>
                 </div>
               </div>
@@ -82,7 +82,7 @@
                   <div class="slide__description">
                     <h1 class="slide__title">Авто в лизинг для юридических лиц</h1>
                     <p class="slide__text">Получите машину за 3 дня</p>
-                    <button class="slide__btn">Оставить заявку</button>
+                    <button class="slide__btn form-btn">Оставить заявку</button>
                   </div>
                 </div>
               </div>
@@ -91,7 +91,7 @@
                   <div class="slide__description">
                     <h1 class="slide__title">Каталог автомобилей в наличии</h1>
                     <p class="slide__text">Выберите свой автомобиль!</p>
-                    <button class="slide__btn">Оставить заявку</button>
+                    <button class="slide__btn form-btn">Оставить заявку</button>
                   </div>
                 </div>
               </div>
@@ -100,7 +100,7 @@
                   <div class="slide__description">
                     <h1 class="slide__title">Условия и выгоды</h1>
                     <p class="slide__text">С нами выгоднее всегда</p>
-                    <button class="slide__btn">Оставить заявку</button>
+                    <button class="slide__btn form-btn">Оставить заявку</button>
                   </div>
                 </div>
               </div>
@@ -109,7 +109,7 @@
                   <div class="slide__description">
                     <h1 class="slide__title">Схема лизинга легковых автомобилей</h1>
                     <p class="slide__text">Ускоренная амортизация</p>
-                    <button class="slide__btn">Оставить заявку</button>
+                    <button class="slide__btn form-btn">Оставить заявку</button>
                   </div>
                 </div>
               </div>
@@ -133,7 +133,7 @@
       <section class="calc">
         <div class="container">
           <h2 class="calc__title">Рассчитайте стоимость автомобиля в лизинг</h2>
-          <form class="calc-form">
+          <form class="calc-form" id="calculator" method="get" action="#">
             <div class="calc__block"><span class="block__label">  Стоимость автомобиля</span>
               <input class="calc__input" id="cost" type="text" name="cost" maxlength="7" value="2500000">
               <label for="cost">₽</label>
@@ -145,9 +145,9 @@
               <input id="depositRange" type="range" name="deposit" min="10" max="60" step="10" value="20">
             </div>
             <div class="calc__block"><span class="block__label">   Срок лизинга</span>
-              <input class="calc__input" id="month" type="text" name="limit" value="20" maxlength="2">
+              <input class="calc__input" id="month" type="text" name="month" value="20" maxlength="2">
               <label for="month">мес.</label>
-              <input id="monthRange" type="range" name="limit" min="1" max="60" value="60">
+              <input id="monthRange" type="range" name="month" min="1" max="60" value="60">
             </div>
           </form>
           <div class="result">
@@ -157,7 +157,7 @@
             <div class="result__block"><span class="block__label"> Ежемесячный платеж от</span>
               <p class="result__value" id="monthPay"> </p>
             </div>
-            <button class="result__btn form-btn">   Оставить заявку</button>
+            <button class="result__btn form-btn" id="submit">   Оставить заявку</button>
           </div>
         </div>
       </section>
@@ -166,10 +166,10 @@
         <div class="popup__wrapper">
           <h2 class="popup__title">Онлайн-заявка</h2>
           <p class="popup__subtitle">  Заполните форму, и мы вскоре свяжемся с вами, чтобы ответить на все вопросы</p>
-          <form class="popup__form" id="form">
+          <form class="popup__form" id="form" method="get" action="#">
             <div class="form-wrap">
               <div class="popup__form-block">
-                <input class="popup__input phone-input" type="tel" name="phone" required>
+                <input class="popup__input phone-input" type="text" name="phone" required>
                 <label for="phone"> Телефон</label>
               </div>
               <div class="popup__form-block">
@@ -179,7 +179,7 @@
             </div>
             <div class="button-field">
               <p class="notice-text">  Нажимая на кнопку «Оставить заявку»,  я даю согласие <span>на обработку персональных данных</span></p>
-              <button class="popup-form__btn" type="submit" form="form" disabled>
+              <button class="popup-form__btn" type="button" form="form" disabled>
                 <span class="btn__txt">Оставить заявку</span><svg class="btn__circle" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
 <circle class="btn__loading" cx="50" cy="50" r="45"/>
 </svg>

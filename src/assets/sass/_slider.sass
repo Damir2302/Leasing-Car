@@ -24,6 +24,7 @@
             background: #000000 url('../img/slide-6.jpg') no-repeat right
         &.active
             display: block
+            animation: fade 500ms linear
     &__item
         width: 585px
         height: 238px
@@ -135,7 +136,12 @@ circle
         
     100%
         stroke-dashoffset: 134
-        
+
+@keyframes fade
+    0%
+        opacity: 0
+    100%
+        opacity: 1
 
 
 @media (max-width: 1280px)

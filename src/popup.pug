@@ -4,17 +4,17 @@
     .popup__wrapper
         h2.popup__title Онлайн-заявка
         p.popup__subtitle   Заполните форму, и мы вскоре свяжемся с вами, чтобы ответить на все вопросы
-        form.popup__form#form
+        form.popup__form#form(method="get", action="#")
             .form-wrap
                 .popup__form-block
-                    input(class="popup__input phone-input", type="tel", name="phone", required)
+                    input(class="popup__input phone-input", type="text", name="phone", required)
                     label(for="phone")  Телефон
                 .popup__form-block
                     input(class="popup__input name-input", type="text", name="name", required)
                     label(for="name") Имя
             .button-field
                 p.notice-text   Нажимая на кнопку «Оставить заявку»,  я даю согласие <span>на обработку персональных данных</span>
-                button.popup-form__btn(type="submit", form="form", disabled) <span class="btn__txt">Оставить заявку</span>
+                button.popup-form__btn(type="button", form="form", disabled) <span class="btn__txt">Оставить заявку</span>
                     <svg class="btn__circle" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                     <circle class="btn__loading" cx="50" cy="50" r="45"/>
                     </svg>

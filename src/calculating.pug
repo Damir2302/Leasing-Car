@@ -1,7 +1,7 @@
 section.calc
     .container
         h2.calc__title Рассчитайте стоимость автомобиля в лизинг
-        form.calc-form
+        form#calculator.calc-form(method="get", action="#")
             .calc__block
                 span.block__label   Стоимость автомобиля
                 input(id="cost", 
@@ -38,13 +38,13 @@ section.calc
                 input(id="month", 
                     class="calc__input", 
                     type="text", 
-                    name="limit",
+                    name="month",
                     value="20"
                     maxlength="2")
                 label(for="month") мес.
                 input(id="monthRange", 
                     type="range", 
-                    name="limit", 
+                    name="month", 
                     min="1"
                     max="60"
                     value="60")
@@ -55,4 +55,4 @@ section.calc
             .result__block
                 span.block__label  Ежемесячный платеж от
                 p.result__value#monthPay 
-            button.result__btn.form-btn    Оставить заявку
+            button#submit.result__btn.form-btn    Оставить заявку

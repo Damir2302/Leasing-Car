@@ -7,7 +7,7 @@ menuIcon.onclick = () => {
         document.body.style.overflow = 'hidden';
         layout.style.zIndex = 2;
         layout.style.opacity = 0.5;
-    }   else {
+    } else {
         document.body.style.overflow = 'unset';
         layout.style.zIndex = -999;
         layout.style.opacity = 0;
@@ -60,8 +60,18 @@ const enableBtn = () => {
 submitBtn.onclick = () => {
     submitBtn.querySelector('.btn__txt').style.display = 'none';
     submitBtn.querySelector('.btn__circle').style.display = 'block';
+    setTimeout(submitForm, 2000);
 }
 
+const submitForm = function(){
+    document.getElementById("form").submit();
+    
+    setTimeOut(function() {
+        document.getElementById("calculator").submit();
+    }, 5000);
+}
+
+//Добавляем событие
 inputForm.forEach((el) => {
     el.addEventListener('keyup', enableBtn);
     el.onfocus = () => {
@@ -73,3 +83,8 @@ inputForm.forEach((el) => {
         }
     }
 })
+
+const phoneInput = document.querySelector('.phone-input')
+phoneInput.onkeydown = function(e) {
+    return !(/^[А-Яа-яA-Za-z ]$/.test(e.key))
+}

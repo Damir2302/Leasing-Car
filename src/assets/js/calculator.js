@@ -94,3 +94,4 @@ monthInput.onblur = () => {
         monthInput.value = monthRange.max;
     }
 }
+
