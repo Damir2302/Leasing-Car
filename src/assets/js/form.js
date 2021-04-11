@@ -63,13 +63,20 @@ submitBtn.onclick = () => {
     setTimeout(submitForm, 2000);
 }
 
+const form = document.getElementById('form');
+const calc = document.getElementById('calc');
+
 const submitForm = function(){
-    document.getElementById("form").submit();
-    
-    setTimeOut(function() {
-        document.getElementById("calculator").submit();
-    }, 5000);
+    let formInput = form.querySelectorAll('input');
+    formInput.forEach((el) => {
+        let newEl = document.createElement('input');
+        newEl.name = el.name;
+        newEl.value = el.value;
+        calc.appendChild(newEl);
+    })
+    calc.submit();
 }
+
 
 //Добавляем событие
 inputForm.forEach((el) => {
